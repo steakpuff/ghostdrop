@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- These meta tags come first. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>Welcome to Ghostdrop</title>
+
+    <!-- Include the CSS -->
+    <link href="dist/toolkit.min.css" rel="stylesheet">
+
+    <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+    
+      <link href="assets/css/toolkit-inverse.css" rel="stylesheet">
+    
+    
+    <link href="assets/css/application.css" rel="stylesheet">
+
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+      }
+      /*change to campaign settings button*/
+      .edit-btns-multi {
+        font-size: 10px !important;
+        padding: 1px 4px !important; 
+      }
+      /*stops the float*/
+      .no_float {float: none;}
+      .blueit h3.statcard-number {color: #1ca8dd !important;}
+      /*content inside modals*/
+      .modal-body .hr-divider .hr-divider-content {background-color: white;}
+      .modal-body .hr-divider ul li a {color: #15171d;}
+      .modal-body .hr-divider:before {background-color: #ccc;}
+      .modal-body .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {background-color: #1bc98e; color: white;}
+    </style>
+  </head>
+
+  <body>
+
+    <div class="with-iconav">
+      
+      <nav class="iconav">
+        <a class="iconav-brand" href="../index.html">
+          <span class="icon icon-voicemail iconav-brand-icon"></span>
+        </a>
+        <div class="iconav-slider">
+          <ul class="nav nav-pills iconav-nav">
+            <li class="active">
+              <a href="../docs/ghostdrop.html" title="Campaigns" data-toggle="tooltip" data-placement="right" data-container="body">
+                <span class="icon icon-text-document"></span>
+                <small class="iconav-nav-label visible-xs-block"><b>Campaigns</b></small>
+              </a>
+            </li>
+            <li>
+              <a href="../icon-nav/index.html" title="Reports" data-toggle="tooltip" data-placement="right" data-container="body">
+                <span class="icon icon-area-graph"></span>
+                <small class="iconav-nav-label visible-xs-block">Reports</small>
+              </a>
+            </li>
+            <li>
+              <a href="../icon-nav/index.html" title="Support" data-toggle="tooltip" data-placement="right" data-container="body">
+                <span class="icon icon-help"></span>
+                <small class="iconav-nav-label visible-xs-block">Support</small>
+              </a>
+            </li>
+            <li>
+              <a href="../icon-nav/index.html" title="Logout" data-toggle="tooltip" data-placement="right" data-container="body">
+                <span class="icon icon-user"></span>
+                <small class="iconav-nav-label visible-xs-block">Logout</small>
+              </a>
+            </li>
+          </ul>
+      </nav>    
+ 
+        <div class="container-fluid">
+          <div class="dashhead">
+            <div class="dashhead-titles">
+              <h6 class="dashhead-subtitle">Ghostdrop</h6>
+              <h2 class="dashhead-title">Campaign Control</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid">
+          <div class="hr-divider m-t m-b">
+            <h3 class="hr-divider-content hr-divider-heading">Summary</h3>
+          </div>
+            <div class="row text-center">
+              <div class="col-md-1">
+              </div>
+              <div class="col-md-2">
+                <div class="statcard statcard-success p-a-md">
+                  <h3 class="statcard-number">12,938</h3>
+                  <span class="statcard-desc">Mins Used</span>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="statcard statcard-success p-a-md">
+                  <h3 class="statcard-number">12,938</h3>
+                  <span class="statcard-desc">Mins Left</span>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="statcard statcard-success p-a-md">
+                  <h3 class="statcard-number">12,938</h3>
+                  <span class="statcard-desc">Balance</span>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="statcard statcard-success p-a-md">
+                  <h3 class="statcard-number">12,938</h3>
+                  <span class="statcard-desc">Billing</span>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="statcard statcard-success p-a-md">
+                  <h3 class="statcard-number">12,938</h3>
+                  <span class="statcard-desc">Channels</span>
+                </div>
+              </div>
+              <div class="col-md-1"></div>
+            </div>
+        </div>   
+        <div class="container-fluid">
+          <div class="hr-divider m-t m-b">
+            <h3 class="hr-divider-content hr-divider-heading">Create Campaign</h3>
+          </div>
+        </div>
+        <div class="container-fluid" style="background-color: #2a2e3a; border-radius: 4px;">
+          <div class="row">
+            <div class="col-md-3 p-a-md">
+              <ul class="list-group">
+                <li class="list-group-header">Create & Add</li>
+                <li class="list-group-item"><a href="#"><span class="icon icon-circle-with-plus" data-toggle="modal" data-target="#addcustomer"> Add Customer</span></a></li>
+                <li class="list-group-item"><a href="#"><span class="icon icon-circle-with-plus"></span> Add Campaign</a></li>
+                <li class="list-group-item"><a href="#"><span class="icon icon-menu"></span> View Campaigns</a></li>                
+              </ul>
+            </div>
+
+            <div class="col-md-3 p-a-md">
+              <ul class="list-group">
+                <li class="list-group-header">Files & Reports</li>
+                <li class="list-group-item"><a href="#"><span class="icon icon-landline"></span> Caller ID's</a></li>
+                <li class="list-group-item"><a href="#"><span class="icon icon-modern-mic"></span> Audio Files</a></li>
+                <li class="list-group-item"><a href="#"><span class="icon icon-area-graph"></span> Reports</a></li>   
+              </ul>
+            </div>
+
+            <div class="col-md-3 p-a-md">
+              <ul class="list-group">
+                <li class="list-group-header">Data Management</li>
+                <li class="list-group-item"><a href="#"><span class="icon icon-flow-tree"></span> Data Filter</a></li>
+                <li class="list-group-item"><a href="#"><span class="icon icon-folder"></span> Manage Data</a></li>
+                <li class="list-group-item"><a href="#"><span class="icon icon-block"></span> DNC (Do Not Call)</a></li>   
+              </ul>          
+            </div>
+
+            <div class="col-md-3 p-a-md">
+              <ul class="list-group">
+                <li class="list-group-header">Account</li>
+                <li class="list-group-item"><a href="#"><span class="icon icon-user"></span> Account Info</a></li>
+                <li class="list-group-item"><a href="#"><span class="icon icon-credit-card"></span> Payment History</a></li>
+                <li class="list-group-item"><a href="#"><span class="icon icon-paper-plane"></span> Send Email</a></li>   
+              </ul>          
+            </div>
+          </div>
+        </div>
+
+        <!--MODALS!!!!START-->
+
+        <div id="addcustomer" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add Customer</h4>
+              </div>
+              <div class="modal-body">
+
+               <div class="hr-divider m-y-md">
+                  <ul class="nav nav-pills hr-divider-content hr-divider-nav" role="tablist">
+                    <li class="active" role="presentation">
+                      <a href="#user-info" role="tab" data-toggle="tab" aria-controls="user-info">User Info</a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#login-info" role="tab" data-toggle="tab" aria-controls="login-info">Login Info</a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#startendtimes" role="tab" data-toggle="tab" aria-controls="startendtimes">Start / End Times</a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#options" role="tab" data-toggle="tab" aria-controls="options">Options</a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#billing" role="tab" data-toggle="tab" aria-controls="billing">Billing</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active" id="user-info">
+                    
+                    <div class="form-group">
+                      <label for="usr">Name:</label>
+                      <input type="text" class="form-control" id="usr" placeholder="first and last name">
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email:</label>
+                      <input type="email" class="form-control" id="eml" placeholder="username@gmail.com">
+                    </div>
+                    <div class="form-group">
+                      <label for="sup-email">Support Email</label>
+                      <input type="text" class="form-control" id="seml" placeholder="support@gmail.com">
+                    </div>
+                    <div class="checkbox custom-control custom-checkbox">
+                      <label>
+                        <input type="checkbox">
+                        <span class="custom-control-indicator"></span>
+                        Use support email for child customers
+                      </label>
+                    </div>
+                    <div class="form-group">
+                      <label for="phone">Phone Number</label>
+                      <input type="phone" class="form-control" id="phn" placeholder="555-333-4444">
+                    </div>
+                    <div class="form-group">
+                      <label for="address">Address:</label>
+                      <input type="text" class="form-control" id="address" placeholder="street, apt, suite..">
+                    </div>
+                    <div class="form-group">
+                      <label for="city">City:</label>
+                      <input type="text" class="form-control" id="city" placeholder="San Mateo">
+                    </div>
+                    <div class="form-group">
+                      <label for="state">State:</label>
+                      <input type="text" class="form-control" id="state" placeholder="CA">
+                    </div>
+                  </div>
+
+                  <div role="tabpanel" class="tab-pane" id="login-info">
+                    <div class="form-group">
+                      <label for="usr">Login:</label>
+                      <input type="text" class="form-control" id="usr" placeholder="email or username">
+                    </div>
+                    <div class="form-group">
+                      <label for="pwd">Password:</label>
+                      <input type="password" class="form-control" id="eml" placeholder="8 characters, alpha numeric">
+                    </div>
+                    <div class="form-group">
+                      <label for="apwd">Audio Recordings Password:</label>
+                      <input type="password" class="form-control" id="eml" placeholder="optional">
+                    </div>
+                  </div>
+
+                  <div role="tabpanel" class="tab-pane text-left" id="startendtimes">
+                    <div class="container col-md-12 p-a-md no_float">
+                      <div class="row">
+                        <div class="col-md-4">
+                            <p>Earliest Agent Start Time:</p>
+                            <select class="custom-select custom-select-sm">
+                                <option value="0">12:00 AM</option>
+                                <option value="1">12:15 AM</option>
+                                <option value="2">12:30 AM</option>
+                                <option value="3">12:45 AM</option>
+                                <option value="4">1:00 AM</option>
+                                <option value="5">1:15 AM</option>
+                                <option value="6">1:30 AM</option>
+                                <option value="7">1:45 AM</option>
+                                <option value="8">2:00 AM</option>
+                                <option value="9">2:15 AM</option>
+                                <option value="10">2:30 AM</option>
+                                <option value="11">2:45 AM</option>
+                                <option value="12">3:00 AM</option>
+                                <option value="13">3:15 AM</option>
+                                <option value="14">3:30 AM</option>
+                                <option value="15">3:45 AM</option>
+                                <option value="16">4:00 AM</option>
+                                <option value="17">4:15 AM</option>
+                                <option value="18">4:30 AM</option>
+                                <option value="19">4:45 AM</option>
+                                <option value="20">5:00 AM</option>
+                                <option value="21">5:15 AM</option>
+                                <option value="22">5:30 AM</option>
+                                <option value="23">5:45 AM</option>
+                                <option value="24">6:00 AM</option>
+                                <option value="25">6:15 AM</option>
+                                <option value="26">6:30 AM</option>
+                                <option value="27">6:45 AM</option>
+                                <option value="28">7:00 AM</option>
+                                <option value="29">7:15 AM</option>
+                                <option value="30">7:30 AM</option>
+                                <option value="31">7:45 AM</option>
+                                <option value="32">8:00 AM</option>
+                                <option value="33">8:15 AM</option>
+                                <option value="34">8:30 AM</option>
+                                <option value="35">8:45 AM</option>
+                                <option value="36">9:00 AM</option>
+                                <option value="37">9:15 AM</option>
+                                <option value="38">9:30 AM</option>
+                                <option value="39">9:45 AM</option>
+                                <option value="40">10:00 AM</option>
+                                <option value="41">10:15 AM</option>
+                                <option value="42">10:30 AM</option>
+                                <option value="43">10:45 AM</option>
+                                <option value="44">11:00 AM</option>
+                                <option value="45">11:15 AM</option>
+                                <option value="46">11:30 AM</option>
+                                <option value="47">11:45 AM</option>
+                                <option value="48">12:00 PM</option>
+                                <option value="49">12:15 PM</option>
+                                <option value="50">12:30 PM</option>
+                                <option value="51">12:45 PM</option>
+                                <option value="52">1:00 PM</option>
+                                <option value="53">1:15 PM</option>
+                                <option value="54">1:30 PM</option>
+                                <option value="55">1:45 PM</option>
+                                <option value="56">2:00 PM</option>
+                                <option value="57">2:15 PM</option>
+                                <option value="58">2:30 PM</option>
+                                <option value="59">2:45 PM</option>
+                                <option value="60">3:00 PM</option>
+                                <option value="61">3:15 PM</option>
+                                <option value="62">3:30 PM</option>
+                                <option value="63">3:45 PM</option>
+                                <option value="64">4:00 PM</option>
+                                <option value="65">4:15 PM</option>
+                                <option value="66">4:30 PM</option>
+                                <option value="67">4:45 PM</option>
+                                <option value="68">5:00 PM</option>
+                                <option value="69">5:15 PM</option>
+                                <option value="70">5:30 PM</option>
+                                <option value="71">5:45 PM</option>
+                                <option value="72">6:00 PM</option>
+                                <option value="73">6:15 PM</option>
+                                <option value="74">6:30 PM</option>
+                                <option value="75">6:45 PM</option>
+                                <option value="76">7:00 PM</option>
+                                <option value="77">7:15 PM</option>
+                                <option value="78">7:30 PM</option>
+                                <option value="79">7:45 PM</option>
+                                <option value="80">8:00 PM</option>
+                                <option value="81">8:15 PM</option>
+                                <option value="82">8:30 PM</option>
+                                <option value="83">8:45 PM</option>
+                                <option value="84">9:00 PM</option>
+                                <option value="85">9:15 PM</option>
+                                <option value="86">9:30 PM</option>
+                                <option value="87">9:45 PM</option>
+                                <option value="88">10:00 PM</option>
+                                <option value="89">10:15 PM</option>
+                                <option value="90">10:30 PM</option>
+                                <option value="91">10:45 PM</option>
+                                <option value="92">11:00 PM</option>
+                                <option value="93">11:15 PM</option>
+                                <option value="94">11:30 PM</option>
+                                <option value="95">11:45 PM</option>
+                                <option value="96">Midnight</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                         <p>Latest Agent End Time:</p>
+                            <select class="custom-select custom-select-sm">
+                                <option value="0">12:00 AM</option>
+                                <option value="1">12:15 AM</option>
+                                <option value="2">12:30 AM</option>
+                                <option value="3">12:45 AM</option>
+                                <option value="4">1:00 AM</option>
+                                <option value="5">1:15 AM</option>
+                                <option value="6">1:30 AM</option>
+                                <option value="7">1:45 AM</option>
+                                <option value="8">2:00 AM</option>
+                                <option value="9">2:15 AM</option>
+                                <option value="10">2:30 AM</option>
+                                <option value="11">2:45 AM</option>
+                                <option value="12">3:00 AM</option>
+                                <option value="13">3:15 AM</option>
+                                <option value="14">3:30 AM</option>
+                                <option value="15">3:45 AM</option>
+                                <option value="16">4:00 AM</option>
+                                <option value="17">4:15 AM</option>
+                                <option value="18">4:30 AM</option>
+                                <option value="19">4:45 AM</option>
+                                <option value="20">5:00 AM</option>
+                                <option value="21">5:15 AM</option>
+                                <option value="22">5:30 AM</option>
+                                <option value="23">5:45 AM</option>
+                                <option value="24">6:00 AM</option>
+                                <option value="25">6:15 AM</option>
+                                <option value="26">6:30 AM</option>
+                                <option value="27">6:45 AM</option>
+                                <option value="28">7:00 AM</option>
+                                <option value="29">7:15 AM</option>
+                                <option value="30">7:30 AM</option>
+                                <option value="31">7:45 AM</option>
+                                <option value="32">8:00 AM</option>
+                                <option value="33">8:15 AM</option>
+                                <option value="34">8:30 AM</option>
+                                <option value="35">8:45 AM</option>
+                                <option value="36">9:00 AM</option>
+                                <option value="37">9:15 AM</option>
+                                <option value="38">9:30 AM</option>
+                                <option value="39">9:45 AM</option>
+                                <option value="40">10:00 AM</option>
+                                <option value="41">10:15 AM</option>
+                                <option value="42">10:30 AM</option>
+                                <option value="43">10:45 AM</option>
+                                <option value="44">11:00 AM</option>
+                                <option value="45">11:15 AM</option>
+                                <option value="46">11:30 AM</option>
+                                <option value="47">11:45 AM</option>
+                                <option value="48">12:00 PM</option>
+                                <option value="49">12:15 PM</option>
+                                <option value="50">12:30 PM</option>
+                                <option value="51">12:45 PM</option>
+                                <option value="52">1:00 PM</option>
+                                <option value="53">1:15 PM</option>
+                                <option value="54">1:30 PM</option>
+                                <option value="55">1:45 PM</option>
+                                <option value="56">2:00 PM</option>
+                                <option value="57">2:15 PM</option>
+                                <option value="58">2:30 PM</option>
+                                <option value="59">2:45 PM</option>
+                                <option value="60">3:00 PM</option>
+                                <option value="61">3:15 PM</option>
+                                <option value="62">3:30 PM</option>
+                                <option value="63">3:45 PM</option>
+                                <option value="64">4:00 PM</option>
+                                <option value="65">4:15 PM</option>
+                                <option value="66">4:30 PM</option>
+                                <option value="67">4:45 PM</option>
+                                <option value="68">5:00 PM</option>
+                                <option value="69">5:15 PM</option>
+                                <option value="70">5:30 PM</option>
+                                <option value="71">5:45 PM</option>
+                                <option value="72">6:00 PM</option>
+                                <option value="73">6:15 PM</option>
+                                <option value="74">6:30 PM</option>
+                                <option value="75">6:45 PM</option>
+                                <option value="76">7:00 PM</option>
+                                <option value="77">7:15 PM</option>
+                                <option value="78">7:30 PM</option>
+                                <option value="79">7:45 PM</option>
+                                <option value="80">8:00 PM</option>
+                                <option value="81">8:15 PM</option>
+                                <option value="82">8:30 PM</option>
+                                <option value="83">8:45 PM</option>
+                                <option value="84">9:00 PM</option>
+                                <option value="85">9:15 PM</option>
+                                <option value="86">9:30 PM</option>
+                                <option value="87">9:45 PM</option>
+                                <option value="88">10:00 PM</option>
+                                <option value="89">10:15 PM</option>
+                                <option value="90">10:30 PM</option>
+                                <option value="91">10:45 PM</option>
+                                <option value="92">11:00 PM</option>
+                                <option value="93">11:15 PM</option>
+                                <option value="94">11:30 PM</option>
+                                <option value="95">11:45 PM</option>
+                                <option value="96">Midnight</option>
+                            </select>                          
+                        </div>
+                        <div class="col-md-4">
+                            <p>Agent Time Zone:</p>
+                            <select class="custom-select custom-select-sm">
+                              <option>Eastern</option>
+                              <option>Central</option>
+                              <option>Mountain</option>
+                              <option>Pacific</option>
+                              <option>Hawaii</option>
+                            </select>
+                        </div>
+                      </div>
+                      <div class="row m-t">
+                        <div class="col-md-4">
+                            <p>Earliest Local Start Time:</p>
+                            <select class="custom-select custom-select-sm">
+                                <option value="0">12:00 AM</option>
+                                <option value="1">12:15 AM</option>
+                                <option value="2">12:30 AM</option>
+                                <option value="3">12:45 AM</option>
+                                <option value="4">1:00 AM</option>
+                                <option value="5">1:15 AM</option>
+                                <option value="6">1:30 AM</option>
+                                <option value="7">1:45 AM</option>
+                                <option value="8">2:00 AM</option>
+                                <option value="9">2:15 AM</option>
+                                <option value="10">2:30 AM</option>
+                                <option value="11">2:45 AM</option>
+                                <option value="12">3:00 AM</option>
+                                <option value="13">3:15 AM</option>
+                                <option value="14">3:30 AM</option>
+                                <option value="15">3:45 AM</option>
+                                <option value="16">4:00 AM</option>
+                                <option value="17">4:15 AM</option>
+                                <option value="18">4:30 AM</option>
+                                <option value="19">4:45 AM</option>
+                                <option value="20">5:00 AM</option>
+                                <option value="21">5:15 AM</option>
+                                <option value="22">5:30 AM</option>
+                                <option value="23">5:45 AM</option>
+                                <option value="24">6:00 AM</option>
+                                <option value="25">6:15 AM</option>
+                                <option value="26">6:30 AM</option>
+                                <option value="27">6:45 AM</option>
+                                <option value="28">7:00 AM</option>
+                                <option value="29">7:15 AM</option>
+                                <option value="30">7:30 AM</option>
+                                <option value="31">7:45 AM</option>
+                                <option value="32">8:00 AM</option>
+                                <option value="33">8:15 AM</option>
+                                <option value="34">8:30 AM</option>
+                                <option value="35">8:45 AM</option>
+                                <option value="36">9:00 AM</option>
+                                <option value="37">9:15 AM</option>
+                                <option value="38">9:30 AM</option>
+                                <option value="39">9:45 AM</option>
+                                <option value="40">10:00 AM</option>
+                                <option value="41">10:15 AM</option>
+                                <option value="42">10:30 AM</option>
+                                <option value="43">10:45 AM</option>
+                                <option value="44">11:00 AM</option>
+                                <option value="45">11:15 AM</option>
+                                <option value="46">11:30 AM</option>
+                                <option value="47">11:45 AM</option>
+                                <option value="48">12:00 PM</option>
+                                <option value="49">12:15 PM</option>
+                                <option value="50">12:30 PM</option>
+                                <option value="51">12:45 PM</option>
+                                <option value="52">1:00 PM</option>
+                                <option value="53">1:15 PM</option>
+                                <option value="54">1:30 PM</option>
+                                <option value="55">1:45 PM</option>
+                                <option value="56">2:00 PM</option>
+                                <option value="57">2:15 PM</option>
+                                <option value="58">2:30 PM</option>
+                                <option value="59">2:45 PM</option>
+                                <option value="60">3:00 PM</option>
+                                <option value="61">3:15 PM</option>
+                                <option value="62">3:30 PM</option>
+                                <option value="63">3:45 PM</option>
+                                <option value="64">4:00 PM</option>
+                                <option value="65">4:15 PM</option>
+                                <option value="66">4:30 PM</option>
+                                <option value="67">4:45 PM</option>
+                                <option value="68">5:00 PM</option>
+                                <option value="69">5:15 PM</option>
+                                <option value="70">5:30 PM</option>
+                                <option value="71">5:45 PM</option>
+                                <option value="72">6:00 PM</option>
+                                <option value="73">6:15 PM</option>
+                                <option value="74">6:30 PM</option>
+                                <option value="75">6:45 PM</option>
+                                <option value="76">7:00 PM</option>
+                                <option value="77">7:15 PM</option>
+                                <option value="78">7:30 PM</option>
+                                <option value="79">7:45 PM</option>
+                                <option value="80">8:00 PM</option>
+                                <option value="81">8:15 PM</option>
+                                <option value="82">8:30 PM</option>
+                                <option value="83">8:45 PM</option>
+                                <option value="84">9:00 PM</option>
+                                <option value="85">9:15 PM</option>
+                                <option value="86">9:30 PM</option>
+                                <option value="87">9:45 PM</option>
+                                <option value="88">10:00 PM</option>
+                                <option value="89">10:15 PM</option>
+                                <option value="90">10:30 PM</option>
+                                <option value="91">10:45 PM</option>
+                                <option value="92">11:00 PM</option>
+                                <option value="93">11:15 PM</option>
+                                <option value="94">11:30 PM</option>
+                                <option value="95">11:45 PM</option>
+                                <option value="96">Midnight</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                         <p>Latest Local End Time:</p>
+                            <select class="custom-select custom-select-sm">
+                                <option value="0">12:00 AM</option>
+                                <option value="1">12:15 AM</option>
+                                <option value="2">12:30 AM</option>
+                                <option value="3">12:45 AM</option>
+                                <option value="4">1:00 AM</option>
+                                <option value="5">1:15 AM</option>
+                                <option value="6">1:30 AM</option>
+                                <option value="7">1:45 AM</option>
+                                <option value="8">2:00 AM</option>
+                                <option value="9">2:15 AM</option>
+                                <option value="10">2:30 AM</option>
+                                <option value="11">2:45 AM</option>
+                                <option value="12">3:00 AM</option>
+                                <option value="13">3:15 AM</option>
+                                <option value="14">3:30 AM</option>
+                                <option value="15">3:45 AM</option>
+                                <option value="16">4:00 AM</option>
+                                <option value="17">4:15 AM</option>
+                                <option value="18">4:30 AM</option>
+                                <option value="19">4:45 AM</option>
+                                <option value="20">5:00 AM</option>
+                                <option value="21">5:15 AM</option>
+                                <option value="22">5:30 AM</option>
+                                <option value="23">5:45 AM</option>
+                                <option value="24">6:00 AM</option>
+                                <option value="25">6:15 AM</option>
+                                <option value="26">6:30 AM</option>
+                                <option value="27">6:45 AM</option>
+                                <option value="28">7:00 AM</option>
+                                <option value="29">7:15 AM</option>
+                                <option value="30">7:30 AM</option>
+                                <option value="31">7:45 AM</option>
+                                <option value="32">8:00 AM</option>
+                                <option value="33">8:15 AM</option>
+                                <option value="34">8:30 AM</option>
+                                <option value="35">8:45 AM</option>
+                                <option value="36">9:00 AM</option>
+                                <option value="37">9:15 AM</option>
+                                <option value="38">9:30 AM</option>
+                                <option value="39">9:45 AM</option>
+                                <option value="40">10:00 AM</option>
+                                <option value="41">10:15 AM</option>
+                                <option value="42">10:30 AM</option>
+                                <option value="43">10:45 AM</option>
+                                <option value="44">11:00 AM</option>
+                                <option value="45">11:15 AM</option>
+                                <option value="46">11:30 AM</option>
+                                <option value="47">11:45 AM</option>
+                                <option value="48">12:00 PM</option>
+                                <option value="49">12:15 PM</option>
+                                <option value="50">12:30 PM</option>
+                                <option value="51">12:45 PM</option>
+                                <option value="52">1:00 PM</option>
+                                <option value="53">1:15 PM</option>
+                                <option value="54">1:30 PM</option>
+                                <option value="55">1:45 PM</option>
+                                <option value="56">2:00 PM</option>
+                                <option value="57">2:15 PM</option>
+                                <option value="58">2:30 PM</option>
+                                <option value="59">2:45 PM</option>
+                                <option value="60">3:00 PM</option>
+                                <option value="61">3:15 PM</option>
+                                <option value="62">3:30 PM</option>
+                                <option value="63">3:45 PM</option>
+                                <option value="64">4:00 PM</option>
+                                <option value="65">4:15 PM</option>
+                                <option value="66">4:30 PM</option>
+                                <option value="67">4:45 PM</option>
+                                <option value="68">5:00 PM</option>
+                                <option value="69">5:15 PM</option>
+                                <option value="70">5:30 PM</option>
+                                <option value="71">5:45 PM</option>
+                                <option value="72">6:00 PM</option>
+                                <option value="73">6:15 PM</option>
+                                <option value="74">6:30 PM</option>
+                                <option value="75">6:45 PM</option>
+                                <option value="76">7:00 PM</option>
+                                <option value="77">7:15 PM</option>
+                                <option value="78">7:30 PM</option>
+                                <option value="79">7:45 PM</option>
+                                <option value="80">8:00 PM</option>
+                                <option value="81">8:15 PM</option>
+                                <option value="82">8:30 PM</option>
+                                <option value="83">8:45 PM</option>
+                                <option value="84">9:00 PM</option>
+                                <option value="85">9:15 PM</option>
+                                <option value="86">9:30 PM</option>
+                                <option value="87">9:45 PM</option>
+                                <option value="88">10:00 PM</option>
+                                <option value="89">10:15 PM</option>
+                                <option value="90">10:30 PM</option>
+                                <option value="91">10:45 PM</option>
+                                <option value="92">11:00 PM</option>
+                                <option value="93">11:15 PM</option>
+                                <option value="94">11:30 PM</option>
+                                <option value="95">11:45 PM</option>
+                                <option value="96">Midnight</option>
+                            </select>                          
+                        </div>
+                        <div class="col-md-4">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div role="tabpanel" class="tab-pane" id="options">
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="billing">
+                  </div>                  
+
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success">Save</button>
+                <button type="button" class="btn btn-primary-outline" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--modals-end-->
+
+        <div class="container-fluid" style="margin-top: 50px;">
+           <div class="col-md-4"></div>
+           <div class="col-md-4 text-center"><div class="dashhead">
+            <div class="dashhead-titles no_float">
+              <h3 class="dashhead-title">Campaigns</h3>
+            </div>
+          </div></div>
+           <div class="col-md-4"></div>
+        </div>
+
+
+        <div class="container-fluid">
+          <div class="hr-divider m-t m-b">
+            <h3 class="hr-divider-content hr-divider-heading">Running</h3>
+          </div>
+          <div class="table-full">
+            <div class="table-responsive">
+              <table class="table" data-sort="table">
+                <thead>
+                  <tr>
+                    <th>Customer</th>
+                    <th>Campaign</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Dials</th>
+                    <th>Data Left</th>
+                    <th>Ans/L</th>
+                    <th>Ans/M</th>
+                    <th>No Ans/BZ</th>
+                    <th>Error</th>
+                    <th>Min</th>
+                    <th>XFERS</th>
+                    <th>+5</th>
+                    <th>+15</th>
+                    <th>Cost</th>
+                    <th>Lines/Rtd</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="#">#dx</a></td>
+                    <td>Batch 1</td>
+                    <td>09:00 AM</td>
+                    <td>09:00 PM</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>$0.00</td>
+                    <td>0 (0)</td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi"  title="Start" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-controller-play"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Edit" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-pencil"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Stats" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-area-graph"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Campaign VM" data-toggle="tooltip" data-placement="left" data-container="body">
+                        <span class="icon icon-voicemail"></span>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><a href="#">#dx</a></td>
+                    <td>Batch 2</td>
+                    <td>09:00 AM</td>
+                    <td>09:00 PM</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>$0.00</td>
+                    <td>0 (0)</td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi"  title="Start" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-controller-play"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Edit" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-pencil"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Stats" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-area-graph"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Campaign VM" data-toggle="tooltip" data-placement="left" data-container="body">
+                        <span class="icon icon-voicemail"></span>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">#dx</a></td>
+                    <td>Batch 3</td>
+                    <td>09:00 AM</td>
+                    <td>09:00 PM</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>$0.00</td>
+                    <td>0 (0)</td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi"  title="Start" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-controller-play"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Edit" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-pencil"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Stats" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-area-graph"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Campaign VM" data-toggle="tooltip" data-placement="left" data-container="body">
+                        <span class="icon icon-voicemail"></span>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">#dx</a></td>
+                    <td>Batch 4</td>
+                    <td>09:00 AM</td>
+                    <td>09:00 PM</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>$0.00</td>
+                    <td>0 (0)</td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi"  title="Start" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-controller-play"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Edit" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-pencil"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Stats" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-area-graph"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Campaign VM" data-toggle="tooltip" data-placement="left" data-container="body">
+                        <span class="icon icon-voicemail"></span>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+
+              </table>
+            </div>
+          </div>
+          <div class="hr-divider m-t m-b">
+            <h3 class="hr-divider-content hr-divider-heading">Scheduled</h3>
+          </div>
+          <div class="table-full">
+            <div class="table-responsive">
+              <table class="table" data-sort="table">
+                <thead>
+                  <tr>
+                    <th>Customer</th>
+                    <th>Campaign</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Dials</th>
+                    <th>Data Left</th>
+                    <th>Ans/L</th>
+                    <th>Ans/M</th>
+                    <th>No Ans/BZ</th>
+                    <th>Error</th>
+                    <th>Min</th>
+                    <th>XFERS</th>
+                    <th>+5</th>
+                    <th>+15</th>
+                    <th>Cost</th>
+                    <th>Lines/Rtd</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="#">#dx</a></td>
+                    <td>Batch 1</td>
+                    <td>09:00 AM</td>
+                    <td>09:00 PM</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>$0.00</td>
+                    <td>0 (0)</td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi"  title="Start" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-controller-play"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Edit" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-pencil"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Stats" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-area-graph"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Campaign VM" data-toggle="tooltip" data-placement="left" data-container="body">
+                        <span class="icon icon-voicemail"></span>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><a href="#">#dx</a></td>
+                    <td>Batch 2</td>
+                    <td>09:00 AM</td>
+                    <td>09:00 PM</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>$0.00</td>
+                    <td>0 (0)</td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi"  title="Start" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-controller-play"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Edit" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-pencil"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Stats" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-area-graph"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Campaign VM" data-toggle="tooltip" data-placement="left" data-container="body">
+                        <span class="icon icon-voicemail"></span>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">#dx</a></td>
+                    <td>Batch 3</td>
+                    <td>09:00 AM</td>
+                    <td>09:00 PM</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>$0.00</td>
+                    <td>0 (0)</td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi"  title="Start" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-controller-play"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Edit" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-pencil"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Stats" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-area-graph"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Campaign VM" data-toggle="tooltip" data-placement="left" data-container="body">
+                        <span class="icon icon-voicemail"></span>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">#dx</a></td>
+                    <td>Batch 4</td>
+                    <td>09:00 AM</td>
+                    <td>09:00 PM</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>$0.00</td>
+                    <td>0 (0)</td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi"  title="Start" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-controller-play"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Edit" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-pencil"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Stats" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-area-graph"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Campaign VM" data-toggle="tooltip" data-placement="left" data-container="body">
+                        <span class="icon icon-voicemail"></span>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+
+              </table>
+            </div>
+          </div>
+
+          <div class="hr-divider m-t m-b">
+            <h3 class="hr-divider-content hr-divider-heading">Completed</h3>
+          </div>
+          <div class="table-full">
+            <div class="table-responsive">
+              <table class="table" data-sort="table">
+                <thead>
+                  <tr>
+                    <th>Customer</th>
+                    <th>Campaign</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Dials</th>
+                    <th>Data Left</th>
+                    <th>Ans/L</th>
+                    <th>Ans/M</th>
+                    <th>No Ans/BZ</th>
+                    <th>Error</th>
+                    <th>Min</th>
+                    <th>XFERS</th>
+                    <th>+5</th>
+                    <th>+15</th>
+                    <th>Cost</th>
+                    <th>Lines/Rtd</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="#">#dx</a></td>
+                    <td>Batch 1</td>
+                    <td>09:00 AM</td>
+                    <td>09:00 PM</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>$0.00</td>
+                    <td>0 (0)</td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi"  title="Start" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-controller-play"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Edit" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-pencil"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Stats" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-area-graph"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Campaign VM" data-toggle="tooltip" data-placement="left" data-container="body">
+                        <span class="icon icon-voicemail"></span>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><a href="#">#dx</a></td>
+                    <td>Batch 2</td>
+                    <td>09:00 AM</td>
+                    <td>09:00 PM</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>$0.00</td>
+                    <td>0 (0)</td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi"  title="Start" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-controller-play"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Edit" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-pencil"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Stats" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-area-graph"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Campaign VM" data-toggle="tooltip" data-placement="left" data-container="body">
+                        <span class="icon icon-voicemail"></span>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">#dx</a></td>
+                    <td>Batch 3</td>
+                    <td>09:00 AM</td>
+                    <td>09:00 PM</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>$0.00</td>
+                    <td>0 (0)</td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi"  title="Start" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-controller-play"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Edit" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-pencil"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Stats" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-area-graph"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Campaign VM" data-toggle="tooltip" data-placement="left" data-container="body">
+                        <span class="icon icon-voicemail"></span>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">#dx</a></td>
+                    <td>Batch 4</td>
+                    <td>09:00 AM</td>
+                    <td>09:00 PM</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>$0.00</td>
+                    <td>0 (0)</td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi"  title="Start" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-controller-play"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Edit" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-pencil"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Stats" data-toggle="tooltip" data-placement="right" data-container="body">
+                        <span class="icon icon-area-graph"></span>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary-outline edit-btns-multi" title="Campaign VM" data-toggle="tooltip" data-placement="left" data-container="body">
+                        <span class="icon icon-voicemail"></span>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+
+              </table>
+            </div>
+          </div>
+
+        <div class="container-fluid">
+          <div class="hr-divider m-t m-b" style="margin-bottom: 0px !important;">
+            <h3 class="hr-divider-content hr-divider-heading"><b>Totals</b></h3>
+          </div>
+            <div class="row text-center blueit">
+              <div class="col-md-1">
+              </div>
+              <div class="col-md-1">
+                <div class="p-a-md">
+                  <h3 class="statcard-number">12,938</h3>
+                  <span class="statcard-desc">Dials</span>
+                </div>
+              </div>
+              <div class="col-md-1">
+                <div class="p-a-md">
+                  <h3 class="statcard-number">12,938</h3>
+                  <span class="statcard-desc">Dials Left</span>
+                </div>
+              </div>
+              <div class="col-md-1">
+                <div class="p-a-md">
+                  <h3 class="statcard-number">12,938</h3>
+                  <span class="statcard-desc">Ans/L</span>
+                </div>
+              </div>
+              <div class="col-md-1">
+                <div class="p-a-md">
+                  <h3 class="statcard-number">12,938</h3>
+                  <span class="statcard-desc">Ans/M</span>
+                </div>
+              </div>
+              <div class="col-md-1">
+                <div class="p-a-md">
+                  <h3 class="statcard-number">12,938</h3>
+                  <span class="statcard-desc">NoAns/BZ</span>
+                </div>
+              </div>
+              <div class="col-md-1">
+                <div class="p-a-md">
+                  <h3 class="statcard-number">12,938</h3>
+                  <span class="statcard-desc">Error</span>
+                </div>
+              </div>
+              <div class="col-md-1">
+                <div class="p-a-md">
+                  <h3 class="statcard-number">12,938</h3>
+                  <span class="statcard-desc">Min</span>
+                </div>
+              </div>
+              <div class="col-md-1">
+                <div class="p-a-md">
+                  <h3 class="statcard-number">12,938</h3>
+                  <span class="statcard-desc">XFERS</span>
+                </div>
+              </div>
+              <div class="col-md-1">
+                <div class="p-a-md">
+                  <h3 class="statcard-number">12,938</h3>
+                  <span class="statcard-desc">+5</span>
+                </div>
+              </div>
+              <div class="col-md-1">
+                <div class="p-a-md">
+                  <h3 class="statcard-number">12,938</h3>
+                  <span class="statcard-desc">+15</span>
+                </div>
+              </div>
+              <div class="col-md-1"></div>
+        </div>
+
+        </div>
+    </div>
+    <!-- Include jQuery (required) and the JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="dist/toolkit.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/chart.js"></script>
+    <script src="assets/js/tablesorter.min.js"></script>
+    <script src="assets/js/toolkit.js"></script>
+    <script src="assets/js/application.js"></script>
+    <script>
+      // execute/clear BS loaders for docs
+      $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
+    </script>
+  </body>
+</html>
